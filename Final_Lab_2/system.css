@@ -1,0 +1,56 @@
+body{
+	margin:30px 210px;
+	font-family: "Times New Roman";
+}
+.head_area{
+	width:100%;
+	overflow: hidden;
+	background: #7bbce2;
+	border-radius: 13px;
+	
+}
+.company{
+	width:60%;
+	float:left;
+	padding: 0px 25px;
+}
+.login{
+	width:20%;
+	float:left;
+}
+.regis{
+	width:20%;
+	float:left;
+}
+p{
+	display:inline-block;
+}
+.mid{
+	width:100%;
+	overflow:hidden;
+}
+.account{
+	width:30%;
+	float:left;
+}
+.free{
+	width:20%;
+	float:left;
+}
+.view{
+	width: 25%;
+    float: left;
+   padding: 110px 0px;
+    box-sizing: border-box;
+	font-size: 20px;
+	
+}
+.pic{
+	width: 25%;
+    float: left;
+   padding: 110px 0px;
+    box-sizing: border-box;
+}
+.pic img{
+	max-width:100%;
+}
