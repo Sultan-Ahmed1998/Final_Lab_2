@@ -21,17 +21,20 @@
 </div>
 <hr/>
 <div class="mid">
-	<h2>Home</h2>
+	
 	<div class="account">
+		<h2>Home</h2>
 		<p><a href="home.php">Dashboard</a></p><br>
 		<p><a href="view.php">View Profile</a></p><br>
 		<p><a href="editProf.php">Edit Profile</a></p><br>
 		<p><a href="changePic.php">Change Profile Picture</a></p><br>
 		<p><a href="changePass.php">Change Password</a></p><br>
+		<p><a href="productAdd.php">Product Add</a></p><br>
+		<p><a href="viewProd.php">View Product</a></p><br>
 		<p><a href="login.php">Log out</a></p><br>
 	</div>
 	<div class="free">
-		
+		<p> </p>
 	</div>
 	<div class="view">
 		<?php

@@ -24,7 +24,7 @@
 <div class="mid">
 	
 	<div class="account">
-		<h2>Change Password</h2>
+		<h2>Edit Product</h2>
 		<p><a href="home.php">Dashboard</a></p><br>
 		<p><a href="view.php">View Profile</a></p><br>
 		<p><a href="editProf.php">Edit Profile</a></p><br>
@@ -36,8 +36,8 @@
 	</div>
 	<div class="free">
 		<p> </p>
-	</div>
-		<div class="view">
+	</div>	
+		<div class="viewe">
 			
 			<?php
 				$servername = "localhost";
@@ -51,7 +51,7 @@
 					die("Connection failed: " . $conn->connect_error);
 				}
 
-				$sql = "SELECT id,email,password FROM users WHERE email='".$_SESSION["email"]."'";
+				$sql = "SELECT p_id,p_name,description,quantity FROM products WHERE p_id='".$_GET["p_id"]."'";
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
@@ -59,8 +59,11 @@
 					
 					while($row = $result->fetch_assoc()) {
 						
-						$id=$row["id"];
-						$pass=$row["password"];
+						$p_id=$row["p_id"];
+						$p_name=$row["p_name"];
+						$description=$row["description"];
+						$quantity=$row["quantity"];
+						
 						
 					}
 					
@@ -73,23 +76,21 @@
 				
 			 ?>
 		<form method="post">
-			
-			<b>Current password :</b>
-			<input type="text" name="oldpass" />
-				
-			<br>
-			<b>New password :</b>
-			<input type="text" name="newpass"/>
-				
-			<br>
-			<b>Retype New Password :</b>
-			<input type="text" name="renewpass"/>
-				
-			
-			<br><br>
-			<input type="submit" value="submit">
-				
 		
+				<b>Product Name :</b>
+				<input type="text" name="nname" value="<?php echo $p_name; ?>" />
+				
+				<br><br>
+				<b>Description :</b></td>
+				<input type="text" name="ndes" value="<?php echo $description; ?>"/>
+				
+				<br><br>
+				<b>Quantity :</b></td>
+				<input type="text" name="nquan" value="<?php echo $quantity; ?>"/>
+				
+				<br><br>
+				<input type="submit" value="submit">
+			
 		
 			
 		
@@ -100,10 +101,7 @@
 	
 	<?php 
 		if ($_SERVER["REQUEST_METHOD"] == "POST"){
-					
-					if($pass==$_POST["oldpass"])
-					{
-						if($_POST["newpass"]==$_POST["renewpass"]){
+			
 							$servername = "localhost";
 							$username = "root";
 							$password = "";
@@ -115,26 +113,15 @@
 							if ($conn->connect_error) {
 								die("Connection failed: " . $conn->connect_error);
 							}
-							$sql="UPDATE users SET password='".$_POST["newpass"]."' WHERE id='".$id."'";
+							$sql="UPDATE products SET p_name='".$_POST["nname"]."',description='".$_POST["ndes"]."',quantity='".$_POST["nquan"]."' WHERE p_id='".$p_id."'";
 							if ($conn->query($sql) === TRUE) {
-								echo "New record created successfully";
+								echo "Product Updated successfully";
 							} else {
 								echo "Error: " . $sql . "<br>" . $conn->error;
 							}
 
 							$conn->close();
-						}
-						else{
-							echo "Don't match";
-						}
 						
-						
-					}
-					else{
-						echo "Old password incorrect";
-					}
-					
-					
 
 					
 			

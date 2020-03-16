@@ -30,12 +30,14 @@
 		<p><a href="editProf.php">Edit Profile</a></p><br>
 		<p><a href="changePic.php">Change Profile Picture</a></p><br>
 		<p><a href="changePass.php">Change Password</a></p><br>
+		<p><a href="productAdd.php">Product Add</a></p><br>
+		<p><a href="viewProd.php">View Product</a></p><br>
 		<p><a href="login.php">Log out</a></p><br>
 	</div>
 	<div class="free">
-	
+		<p> </p>
 	</div>	
-		<div class="view">
+		<div class="viewe">
 			
 			<?php
 				$servername = "localhost";
@@ -78,11 +80,11 @@
 				<b>Name :</b>
 				<input type="text" name="nname" />
 				
-				<br>
+				<br><br>
 				<b>Email :</b></td>
 				<input type="text" name="nemail"/>
 				
-				<br>
+				<br><br>
 				<b>User Name :</b></td>
 				<input type="text" name="nusername"/>
 				

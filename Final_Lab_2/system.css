@@ -32,6 +32,10 @@ p{
 .account{
 	width:30%;
 	float:left;
+	padding: 0px 50px;
+    box-sizing: border-box;
+    background: #8ae4e0;
+    border-radius: 13px;
 }
 .free{
 	width:20%;
@@ -39,6 +43,14 @@ p{
 }
 .view{
 	width: 25%;
+    float: left;
+   padding: 110px 0px;
+    box-sizing: border-box;
+	font-size: 20px;
+	
+}
+.viewe{
+	width: 50%;
     float: left;
    padding: 110px 0px;
     box-sizing: border-box;
